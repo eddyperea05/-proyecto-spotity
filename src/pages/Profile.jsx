@@ -4,7 +4,7 @@ export default function Profile() {
   return (
     <div className="p-6 text-center">
       <h1 className="text-2xl font-bold mb-4">👤 Perfil de usuario</h1>
-      <p className="mb-6">Componente en construcción</p>
+      <p className="mb-6">Prueba de Git</p>
 
       <a
         href={SPOTIFY_AUTH_URL}
