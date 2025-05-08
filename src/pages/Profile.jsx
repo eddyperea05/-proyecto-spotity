@@ -10,7 +10,7 @@ export default function Profile() {
         href={SPOTIFY_AUTH_URL}
         className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
       >
-        Vincular cuenta de Spotify
+        Vincular cuenta de Face
       </a>
     </div>
   );
