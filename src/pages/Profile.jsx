@@ -9,6 +9,7 @@ import SpotifyBadge from "../components/SpotifyBadge";
 export default function Profile() {
   const [firebaseUser, setFirebaseUser] = useState(null);
   const [loadingUser, setLoadingUser] = useState(true);
+  
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -19,6 +20,8 @@ export default function Profile() {
     });
     return () => unsubscribe();
   }, []);
+
+
 
   // 2) Mientras Firebase decide si hay user
   if (loadingUser) {
@@ -98,7 +101,7 @@ export default function Profile() {
             </div>
           )}
           <p className="mb-0 font-semibold">
-            {firebaseUser.displayName || "Usuario sin nombre Mariana Garces  hay que cambiar"}
+            {firebaseUser.displayName || "Usuario sin nombre"}
           </p>
           <p className="text-muted small">{firebaseUser.email}</p>
 
@@ -117,6 +120,21 @@ export default function Profile() {
               ? "Re-vincular cuenta de Spotify"
               : "Vincular cuenta de Spotify"}
           </button>
+
+           <div class name = "h-screen flex justify-cente items-center dark:bg-neutral-900">
+                <button className = "bg-slate-200 px-4 py-2 round hover:bg-slate-300">
+                  onClikck={handeleChangeTheme}
+                  Change Theme
+                </button>
+              </div>
+
+
+
+                
+              
+              
+              
+
         </div>
       </div>
     </div>
