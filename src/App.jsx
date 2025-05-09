@@ -3,11 +3,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import useApi from './hooks/useApi'
+import {card} from './components/card'
 
 function App() {
   const [count, setCount] = useState(0)
 
-  const { data, loading, error } = useApi('https://jsonplaceholder.typicode.com/posts/1')
+  const { data, loading, error } = useApi('https://jsonplaceholder.typicode.com/posts/1x')
 
   return (
     <>
@@ -37,6 +38,7 @@ function App() {
           <p>Cuerpo: {data.body}</p>
         </div>
       )}
+      <card>Holi</card>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>

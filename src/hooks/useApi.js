@@ -10,7 +10,7 @@ const useApi = (url, options) => {
       try {
         const response = await fetch(url, options);
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          throw new Error(`Este error se ve feo: ${response.status}`);
         }
         const result = await response.json();
         setData(result);
