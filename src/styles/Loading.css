@@ -1,0 +1,61 @@
+/* src/Loading.css */
+
+/* Aseguramos que html/body y nuestro root sean 100% negro sin margenes */
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    background: #000;
+  }
+  
+  /* Contenedor principal */
+  .loading-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: #000; /* puro negro */
+    overflow: hidden;
+  }
+  
+  /* Texto de carga grande y centrado */
+  .loading-text {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 6px rgba(255, 0, 0, 0.8);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  /* Contenedor del GIF: ocupa casi toda la anchura */
+  .gif-container {
+    width: 95vw;
+    max-width: 1200px;
+    /* ratio 16:9 aproximado */
+    aspect-ratio: 16/9;
+    background: none;        /* SIN fondo */
+    position: relative;
+  }
+  
+  /* Forzamos al embed de Tenor a ser transparente y cubrir el contenedor */
+  .gif-container iframe,
+  .gif-container .tenor-gif-embed {
+    width: 100% !important;
+    height: 100% !important;
+    background: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    filter: brightness(1.05) blur(0.5px);
+  }
+  
+  /* Si llega a cargar una imagen IMG directamente */
+  .gif-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: none;
+    margin: 0;
+    padding: 0;
+  }
+  

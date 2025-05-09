@@ -1,0 +1,132 @@
+:root {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 400;
+  color: #ffffff;
+  background-color: #0c0c0c;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0c0c0c;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, h2, h3 {
+  color: #e63946;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card {
+  background-color: #111111;
+  border: 1px solid #e63946;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 0 10px #e6394677;
+  width: 100%;
+  max-width: 400px;
+}
+
+input[type="email"],
+input[type="password"] {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+input::placeholder {
+  color: #888;
+}
+
+button {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background-color: #e63946;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #c8192f;
+}
+
+.btn-danger {
+  background-color: #b00020;
+}
+
+.btn-danger:hover {
+  background-color: #900018;
+}
+
+.btn-success {
+  background-color: #1db954;
+}
+
+.btn-success:hover {
+  background-color: #17a74b;
+}
+
+.btn-link {
+  color: #e63946;
+}
+
+.btn-link:hover {
+  color: #ff4c5b;
+}
+
+.text-muted {
+  color: #aaa !important;
+}
+
+.alert {
+  font-family: monospace;
+}
+
+::selection {
+  background: #e63946;
+  color: #fff;
+}
+@keyframes rocketIntro {
+  0% {
+    transform: translateY(-30px) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(10px) scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-rocket {
+  font-family: 'Orbitron', monospace;
+  font-size: 1.1rem;
+  white-space: pre;
+  overflow: hidden;
+  border-right: 2px solid rgba(255,255,255,0.75);
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { border-color: rgba(255,255,255,0.75); }
+  50% { border-color: transparent; }
+}
+

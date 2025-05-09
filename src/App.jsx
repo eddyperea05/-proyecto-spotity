@@ -1,13 +1,22 @@
-import { Routes, Route, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import useApi from "./hooks/useApi";
-import Login from "./pages/Loging";
-import Profile from "./pages/Profile";
-import Callback from './pages/Callback';
 
+import { Routes, Route, Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+
+// Estilos de la app
+import './styles/App.css';
+
+// Hooks
+import useApi from './hooks/useApi';
+
+// Assets
+import reactLogo from './assets/react.svg';
+import viteLogo  from '/vite.svg';  // queda en public/vite.svg
+
+// Páginas
+import Login    from './pages/Loging';   // si renombraras Loging.jsx → Login.jsx, aquí pondrías './pages/Login'
+import Loading  from './pages/Loading';
+import Profile  from './pages/Profile';
+import Callback from './pages/Callback';
 function Home() {
   const [count, setCount] = useState(0);
   const { data, loading, error } = useApi("https://jsonplaceholder.typicode.com/posts/1");
@@ -57,6 +66,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/loading" element={<Loading />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/callback" element={<Callback />} />
       <Route path="*" element={<h1>404 - Página no encontrada</h1>} />
