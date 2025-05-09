@@ -98,7 +98,7 @@ export default function Profile() {
             </div>
           )}
           <p className="mb-0 font-semibold">
-            {firebaseUser.displayName || "Usuario sin nombre"}
+            {firebaseUser.displayName || "Usuario sin nombre Mariana Garces  hay que cambiar"}
           </p>
           <p className="text-muted small">{firebaseUser.email}</p>
 
