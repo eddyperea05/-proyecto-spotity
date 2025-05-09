@@ -1,16 +1,14 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import useApi from './hooks/useApi';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import "./App.css";
+
 
 // Páginas
 import Login from './pages/Loging';
 import Loading from './pages/Loading';
 import Profile from './pages/Profile';
 import Callback from './pages/Callback';
-import Playlists from "./components/Playlists";
+import Playlists from "./pages/Playlists";
 
 function Home() {
   const [count, setCount] = useState(0);

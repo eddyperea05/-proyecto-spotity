@@ -1,6 +1,6 @@
 import { useState } from "react";
 import useApi from "../hooks/useApi";
-import ListCards from "./listCards";
+import ListCards from "../components/listCards";
 
 function Playlists() {
   const urlBase = "https://api.spotify.com/v1";
