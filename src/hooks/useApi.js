@@ -5,24 +5,40 @@ const useApi = (url, options) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url, options);
-        if (!response.ok) {
-          throw new Error(`Este error se ve feo: ${response.status}`);
+  const fetchWithRetry = async (retryCount = 0) => {
+    try {
+      const response = await fetch(url, options);
+      
+      if (response.status === 429) {
+        // Get the retry-after header or default to 1 second
+        const retryAfter = parseInt(response.headers.get('Retry-After')) || 1;
+        
+        if (retryCount < 3) { // Maximum 3 retries
+          // Wait for the specified time
+          await new Promise(resolve => setTimeout(resolve, retryAfter * 1000));
+          // Retry the request
+          return fetchWithRetry(retryCount + 1);
         }
-        const result = await response.json();
-        setData(result);
-      } catch (err) {
-        setError(err);
-      } finally {
-        setLoading(false);
       }
-    };
 
-    fetchData();
-  }, [url, options]);
+      if (!response.ok) {
+        throw new Error(`Error ${response.status}: ${response.statusText}`);
+      }
+
+      const result = await response.json();
+      setData(result);
+      setError(null);
+    } catch (err) {
+      setError(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    setLoading(true);
+    fetchWithRetry();
+  }, [url, JSON.stringify(options)]);
 
   return { data, loading, error };
 };

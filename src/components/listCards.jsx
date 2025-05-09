@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Card from './card'
 
 const songs = [
@@ -25,15 +24,18 @@ const songs = [
 
 export default function ListCards() {
   return (
-    <div>
-      {songs.map((song, index) => (
-          <Card 
-            key={index}
-            title={song.title}
-            description={song.description}
-            imageUrl={song.imageUrl}
-          />
+    <div className="container py-4">
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {songs.map((song, index) => (
+          <div key={index} className="col">
+            <Card 
+              title={song.title}
+              description={song.description}
+              imageUrl={song.imageUrl}
+            />
+          </div>
         ))}
+      </div>
     </div>
   )
 }
