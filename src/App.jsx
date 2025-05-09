@@ -1,27 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import useApi from './hooks/useApi'
-import {card} from './components/card'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import useApi from "./hooks/useApi";
+import Card from "./components/card";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
-  const { data, loading, error } = useApi('https://jsonplaceholder.typicode.com/posts/1x')
+  const { data, loading, error } = useApi(
+    "https://jsonplaceholder.typicode.com/posts/1x"
+  );
+
+  const songs = [
+    {
+      title: "Shape of You",
+      description: "Ed Sheeran - ÷ (Divide)",
+      imageUrl:
+        "https://i.scdn.co/image/ab67616d0000b273ba5db46f4b838ef6027e6f96",
+    },
+    {
+      title: "Blinding Lights",
+      description: "The Weeknd - After Hours",
+      imageUrl:
+        "https://i.scdn.co/image/ab67616d0000b2738863bc11d2aa12b54f5aeb36",
+    },
+    {
+      title: "Dance Monkey",
+      description: "Tones and I - The Kids Are Coming",
+      imageUrl:
+        "https://i.scdn.co/image/ab67616d0000b2732e8ed79e177ff6011076f5f5",
+    },
+  ];
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
       <h1>Vite + React Esta monda</h1>
-     <div className="card">
+      <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
@@ -38,12 +53,14 @@ function App() {
           <p>Cuerpo: {data.body}</p>
         </div>
       )}
-      <card>Holi</card>
+      <div className="cards-container">
+      <Card></Card>
+      </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
