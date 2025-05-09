@@ -1,4 +1,3 @@
-// src/pages/Callback.jsx
 import { useEffect, useState, useRef } from "react";
 import { useNavigate }            from "react-router-dom";
 import { CLIENT_ID, REDIRECT_URI } from "../services/spotifyAuth";
@@ -10,16 +9,16 @@ export default function Callback() {
   const hasRunRef = useRef(false);
 
   useEffect(() => {
-    // Evitamos doble ejecución
+    
     if (hasRunRef.current) return;
     hasRunRef.current = true;
 
-    // LEEMOS el code y el verifier **una sola vez**
+    
     const params       = new URLSearchParams(window.location.search);
     const code         = params.get("code");
     const codeVerifier = localStorage.getItem("spotify_code_verifier");
 
-    // LIMPIAMOS ya el URL y el verifier para que NO estén en la 2ª pasada
+
     window.history.replaceState({}, "", REDIRECT_URI);
     localStorage.removeItem("spotify_code_verifier");
 
@@ -45,7 +44,7 @@ export default function Callback() {
         });
 
         const data = await res.json();
-        console.log("Spotify token response:", data);
+        // console.log("Spotify token response:", data);
 
         if (res.ok && data.access_token) {
           cacheSpotifyTokens(data);

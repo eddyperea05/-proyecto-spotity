@@ -1,14 +1,7 @@
 
 import { Routes, Route, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-
-// Estilos de la app
-import './styles/App.css';
-
-// Hooks
 import useApi from './hooks/useApi';
-
-// Assets
 import reactLogo from './assets/react.svg';
 import viteLogo  from '/vite.svg';  // queda en public/vite.svg
 
@@ -40,9 +33,6 @@ function Home() {
         <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
         <p>Edit <code>src/App.jsx</code> and save to test HMR</p>
       </div>
-
-      <h2>🔥 Firebase Test</h2>
-      <p>Abre la consola del navegador (F12) para ver si Firebase está conectado.</p>
 
       <h2>🌐 Ejemplo de uso de useApi</h2>
       {loading && <p>Cargando datos...</p>}

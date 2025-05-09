@@ -1,0 +1,48 @@
+/* Contenedor principal del componente */
+.loging-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #121212; /* Fondo oscuro */
+  color: #ffffff; /* Texto blanco */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Título principal */
+.loging-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Botón de inicio de sesión */
+.loging-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #1db954; /* Verde de Spotify */
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.loging-button:hover {
+  background-color: #1ed760; /* Verde más claro al pasar el mouse */
+}
+
+.loging-button:active {
+  background-color: #1aa34a; /* Verde más oscuro al hacer clic */
+}
+
+/* Texto de descripción */
+.loging-description {
+  font-size: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+  color: #b3b3b3; /* Gris claro */
+}

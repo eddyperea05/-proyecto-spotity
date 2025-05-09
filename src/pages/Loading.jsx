@@ -1,7 +1,7 @@
-// src/pages/Loading.jsx
+
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/Loading.css"; // Asegúrate de tener este archivo CSS
+// import "../styles/Loading.css";
 
 export default function Loading() {
   const navigate = useNavigate();

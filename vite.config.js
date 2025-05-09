@@ -1,13 +1,22 @@
+// vite.config.js
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [ react() ],
   server: {
-    host: true,
+    host: '0.0.0.0',      // escucha en todas las interfaces, incluidas la LAN
+    port: 3000,
+    strictPort: true,
+    cors: true,
     allowedHosts: [
-      '747e-2800-e2-7e80-216-8023-2c19-d25f-76d8.ngrok-free.app'
-    ]
+      'miapp.loca.lt'
+    ],
+    hmr: {
+      protocol: 'wss',          // usa WebSocket seguro
+      host: 'miapp.loca.lt',    // URL pública de LocalTunnel
+      clientPort: 443           // el puerto al que se conecta el navegador (wss://miapp.loca.lt:443)
+      // ¡OJO! No pongas aquí `port: 443`, que es lo que causaba el bind fail.
+    }
   }
 })
