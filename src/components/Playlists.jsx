@@ -29,14 +29,14 @@ function Playlists() {
             )}
             {error && (
               <div className="alert alert-warning" role="alert">
-                <h4 className="alert-heading">¡Atención!</h4>
-                <p>No se pudieron cargar las playlists. Por favor, intenta de nuevo más tarde.</p>
+                <h4 className="alert-heading">No se pudieron cargar las playlists, esta dando error 429 y no se porque</h4>
+                <p>Bueno si entiendo en copceto porque pero no como solucionar el problema</p>
               </div>
             )}
             {data && (
               <div className="card mb-4">
                 <div className="card-body">
-                  <h5 className="card-title">Your Playlists</h5>
+                  <h5 className="card-title">Primero debo trae algo, pero no funcina</h5>
                   <p className="card-text">
                     Total Playlists: {data.items.length}
                   </p>
